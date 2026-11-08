@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استمارة استثمار الخامات المعدنية | المؤسسة العامة للجيولوجيا والثروة المعدنية</title>
+    <title>بيانات المستثمرين | المؤسسة العامة للجيولوجيا والثروة المعدنية</title>
     <style>
         :root {
-            --primary-dark: #0b1a30;
-            --primary-navy: #14284b;
+            --bg-deep: #062314;
+            --bg-gradient: linear-gradient(135deg, #04160d 0%, #0c3821 50%, #062314 100%);
             --accent-gold: #d4af37;
-            --gold-hover: #b89628;
-            --light-gold: #fbf7e8;
-            --text-main: #1f2937;
+            --gold-light: #f4e8b1;
+            --text-dark: #1f2937;
+            --card-bg: rgba(255, 255, 255, 0.98);
             --border-color: #cbd5e1;
-            --shadow-gold: rgba(212, 175, 55, 0.25);
         }
 
         * {
@@ -22,91 +21,87 @@
 
         body {
             font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #07111e 0%, #10203b 50%, #091526 100%);
-            color: var(--text-main);
+            background: var(--bg-gradient);
+            color: #ffffff;
             margin: 0;
-            padding: 40px 15px;
+            padding: 30px 15px;
             min-height: 100vh;
             line-height: 1.6;
         }
 
-        .main-card {
-            max-width: 900px;
+        .wrapper {
+            max-width: 850px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.98);
-            border: 2px solid var(--accent-gold);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px var(--shadow-gold);
-            border-radius: 12px;
-            padding: 45px;
-            position: relative;
-            backdrop-filter: blur(5px);
         }
 
-        /* الترويسة والشعار */
-        .header {
+        /* الترويسة المطابقة للطابع الرسمي */
+        .platform-header {
             text-align: center;
-            border-bottom: 3px double var(--accent-gold);
-            padding-bottom: 25px;
-            margin-bottom: 35px;
-            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
         }
 
-        .eagle-logo {
-            width: 110px;
-            height: auto;
-            margin-bottom: 12px;
-            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
-        }
-
-        .ministry-title {
-            font-size: 1.35rem;
-            color: #4b5563;
-            font-weight: bold;
-            margin: 0 0 4px 0;
-            letter-spacing: 0.5px;
-        }
-
-        .institution-title {
-            font-size: 2rem;
-            color: var(--primary-dark);
-            font-weight: 800;
-            margin: 0 0 6px 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-        }
-
-        .sub-dept {
-            font-size: 1.15rem;
-            color: var(--accent-gold);
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .form-banner {
-            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-navy) 50%, var(--primary-dark) 100%);
-            color: var(--accent-gold);
-            text-align: center;
-            padding: 14px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 35px;
-            border-radius: 6px;
-            border: 1px solid var(--accent-gold);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            letter-spacing: 0.5px;
-        }
-
-        /* العناوين والتقسيمات */
-        .section-header {
+        .emblem-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px auto;
+            background: #ffffff;
+            border: 3px solid var(--accent-gold);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            font-size: 1.25rem;
-            color: var(--primary-dark);
-            border-right: 5px solid var(--accent-gold);
-            padding-right: 12px;
-            margin-top: 35px;
-            margin-bottom: 20px;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .eagle-svg {
+            width: 70px;
+            height: auto;
+        }
+
+        .platform-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .platform-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .platform-desc {
+            font-size: 0.98rem;
+            color: #e2e8f0;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* بطاقة الاستمارة البيضاء */
+        .form-card {
+            background: var(--card-bg);
+            color: var(--text-dark);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            padding: 40px;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--bg-deep);
+            border-right: 4px solid var(--accent-gold);
+            padding-right: 10px;
+            margin-top: 30px;
+            margin-bottom: 18px;
             font-weight: bold;
-            background: #f8fafc;
+            background: #f1f5f9;
             padding-top: 6px;
             padding-bottom: 6px;
             border-radius: 0 4px 4px 0;
@@ -115,11 +110,11 @@
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-            margin-bottom: 18px;
+            gap: 20px;
+            margin-bottom: 15px;
         }
 
-        .form-grid.full-width {
+        .form-grid.full {
             grid-template-columns: 1fr;
         }
 
@@ -130,9 +125,9 @@
 
         label {
             font-weight: bold;
-            margin-bottom: 7px;
-            font-size: 1.05rem;
-            color: #1e293b;
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+            color: #334155;
         }
 
         input[type="text"],
@@ -140,26 +135,25 @@
         input[type="tel"],
         select,
         textarea {
-            padding: 12px 14px;
+            padding: 11px 14px;
             border: 1.5px solid var(--border-color);
             border-radius: 6px;
             font-size: 1rem;
             background-color: #ffffff;
-            transition: all 0.25s ease-in-out;
             font-family: inherit;
+            transition: all 0.2s;
         }
 
         input:focus, select:focus, textarea:focus {
             border-color: var(--accent-gold);
             outline: none;
-            box-shadow: 0 0 0 4px var(--shadow-gold);
-            background-color: #fffdf9;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
         }
 
-        /* صفة المستثمر (راديو) */
-        .radio-container {
+        /* صفة المستثمر */
+        .radio-box {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             align-items: center;
             padding: 10px 14px;
             background: #f8fafc;
@@ -171,19 +165,18 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: 600;
+            font-weight: normal;
             cursor: pointer;
-            color: var(--primary-navy);
         }
 
-        .radio-label input[type="radio"] {
-            accent-color: var(--accent-gold);
+        .radio-label input {
+            accent-color: var(--bg-deep);
             width: 18px;
             height: 18px;
         }
 
-        /* شبكة الخامات المعدنية الشاملة */
-        .ores-grid {
+        /* شبكة الخامات المعدنية المحدثة بدقة */
+        .ores-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
@@ -193,213 +186,194 @@
             border-radius: 8px;
         }
 
-        .ore-item {
+        .ore-checkbox {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            color: #334155;
+            gap: 8px;
+            font-size: 0.95rem;
             cursor: pointer;
-            padding: 6px 10px;
+            padding: 6px;
             border-radius: 4px;
             transition: background 0.2s;
         }
 
-        .ore-item:hover {
-            background: var(--light-gold);
+        .ore-checkbox:hover {
+            background: #f4e8b155;
         }
 
-        .ore-item input[type="checkbox"] {
-            accent-color: var(--accent-gold);
-            width: 18px;
-            height: 18px;
+        .ore-checkbox input {
+            accent-color: var(--bg-deep);
+            width: 17px;
+            height: 17px;
         }
 
-        /* الأزرار والإجراءات */
-        .actions-area {
-            margin-top: 45px;
+        /* الأزرار */
+        .form-actions {
+            margin-top: 35px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
         }
 
-        .btn-submit {
-            background: linear-gradient(135deg, var(--accent-gold) 0%, #b89628 100%);
-            color: var(--primary-dark);
-            border: none;
-            padding: 14px 40px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px var(--shadow-gold);
-            transition: all 0.3s ease;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-print {
-            background: var(--primary-dark);
+        .btn-primary {
+            background: linear-gradient(135deg, #0c3821 0%, #062314 100%);
             color: #ffffff;
             border: 1px solid var(--accent-gold);
-            padding: 14px 35px;
+            padding: 13px 35px;
             font-size: 1.1rem;
             font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(12, 56, 33, 0.4);
+        }
+
+        .btn-print {
+            background: var(--accent-gold);
+            color: #062314;
+            border: none;
+            padding: 13px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
         .btn-print:hover {
-            background: var(--primary-navy);
             transform: translateY(-2px);
+            background: #b89628;
         }
 
-        /* استجابة الشاشات والتكييف للطباعة */
         @media (max-width: 768px) {
             .form-grid { grid-template-columns: 1fr; }
-            .ores-grid { grid-template-columns: repeat(2, 1fr); }
-            .main-card { padding: 25px; }
-            .institution-title { font-size: 1.5rem; }
+            .ores-container { grid-template-columns: repeat(2, 1fr); }
+            .form-card { padding: 20px; }
         }
 
         @media print {
-            body { background: white; padding: 0; }
-            .main-card { border: none; box-shadow: none; padding: 0; max-width: 100%; backdrop-filter: none; }
-            .actions-area { display: none; }
-            .form-banner { background: var(--primary-dark); -webkit-print-color-adjust: exact; }
-            .section-header { -webkit-print-color-adjust: exact; }
+            body { background: white; color: black; padding: 0; }
+            .form-card { box-shadow: none; border: none; padding: 0; }
+            .form-actions { display: none; }
         }
     </style>
 </head>
 <body>
 
-<div class="main-card">
-    <div class="header">
-        <!-- شعار العقاب السوري الذهبي المعتمد -->
-        <svg class="eagle-logo" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#D4AF37" d="M120 10 L140 50 L185 50 L150 78 L165 120 L120 92 L75 120 L90 78 L55 50 L100 50 Z"/>
-            <path fill="#D4AF37" d="M120 35 C70 35 30 75 30 125 C30 160 50 190 80 205 L80 180 C60 168 48 148 48 125 C48 85 80 53 120 53 C160 53 192 85 192 125 C192 148 180 168 160 180 L160 205 C190 190 210 160 210 125 C210 75 170 35 120 35 Z"/>
-            <path fill="#B89628" d="M120 65 L132 95 L165 95 L138 115 L148 145 L120 125 L92 145 L102 115 L75 95 L108 95 Z"/>
-            <rect x="70" y="160" width="100" height="45" rx="5" fill="#D4AF37"/>
-            <text x="120" y="188" font-family="'Traditional Arabic', serif" font-size="20" font-weight="bold" fill="#0B1A30" text-anchor="middle">سورية</text>
-        </svg>
-
-        <h2 class="ministry-title">جمهورية سوريا — وزارة الطاقة</h2>
-        <h1 class="institution-title">المؤسسة العامة للجيولوجيا والثروة المعدنية</h1>
-        <p class="sub-dept">مديرية المشاريع التعدينية ودائرة الدراسات</p>
+<div class="wrapper">
+    <!-- الترويسة والشعار الذهبي -->
+    <div class="platform-header">
+        <div class="emblem-container">
+            <svg class="eagle-svg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#0C3821" d="M120 10 L140 50 L185 50 L150 78 L165 120 L120 92 L75 120 L90 78 L55 50 L100 50 Z"/>
+                <path fill="#0C3821" d="M120 35 C70 35 30 75 30 125 C30 160 50 190 80 205 L80 180 C60 168 48 148 48 125 C48 85 80 53 120 53 C160 53 192 85 192 125 C192 148 180 168 160 180 L160 205 C190 190 210 160 210 125 C210 75 170 35 120 35 Z"/>
+                <path fill="#D4AF37" d="M120 65 L132 95 L165 95 L138 115 L148 145 L120 125 L92 145 L102 115 L75 95 L108 95 Z"/>
+                <rect x="70" y="160" width="100" height="45" rx="5" fill="#D4AF37"/>
+                <text x="120" y="188" font-family="'Traditional Arabic', serif" font-size="20" font-weight="bold" fill="#062314" text-anchor="middle">سورية</text>
+            </svg>
+        </div>
+        <div class="platform-subtitle">وزارة الطاقة • المؤسسة العامة للجيولوجيا والثروة المعدنية</div>
+        <h1 class="platform-title">بيانات المستثمرين - قطاع الاستثمار المعدني</h1>
+        <p class="platform-desc">نرجو التكرّم بتعبئة البيانات المطلوبة بدقة. تُدرج هذه المعلومات ضمن قاعدة بيانات المستثمرين والشركات لدى المؤسسة لدراسة الفرص الاستثمارية وتسهيل التواصل مع الجهات المعنية، مع الحفاظ الكامل على سرية البيانات.</p>
     </div>
 
-    <div class="form-banner">استمارة طلب استثمار الخامات المعدنية (رسمية معتمدة)</div>
-
-    <form id="investmentForm">
-        <!-- أولاً: البيانات الأساسية -->
-        <div class="section-header">أولاً: البيانات الأساسية للمستثمر</div>
-        <div class="form-grid">
-            <div class="form-group">
-                <label for="fullName">الاسم الكامل للمستثمر / الممثل القانوني *</label>
-                <input type="text" id="fullName" required placeholder="أدخل الاسم الثلاثي">
-            </div>
-            <div class="form-group">
-                <label for="companyName">اسم الشركة / المؤسسة المستثمرة *</label>
-                <input type="text" id="companyName" required placeholder="اسم الشركة المسجلة رسمياً">
-            </div>
-        </div>
-
-        <div class="form-grid">
-            <div class="form-group">
-                <label>صفة المستثمر *</label>
-                <div class="radio-container">
-                    <label class="radio-label">
-                        <input type="radio" name="investorType" value="local" checked> مستثمر داخلي (محلي)
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="investorType" value="foreign"> مستثمر خارجي (أجنبي / مغترب)
-                    </label>
+    <!-- استمارة التعبئة -->
+    <div class="form-card">
+        <form id="miningInvestForm">
+            
+            <div class="section-title">أولاً: بيانات المستثمر الأساسية</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل للمستثمر / الممثل القانوني *</label>
+                    <input type="text" id="fullName" required placeholder="أدخل الاسم الثلاثي">
+                </div>
+                <div class="form-group">
+                    <label for="companyName">اسم الشركة / المؤسسة المستثمرة *</label>
+                    <input type="text" id="companyName" required placeholder="اسم الشركة المسجلة رسمياً">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="nationality">الجنسية / بلد تسجيل الشركة *</label>
-                <input type="text" id="nationality" required placeholder="أدخل الدولة أو جنسية المستثمر">
-            </div>
-        </div>
 
-        <!-- ثانياً: معلومات التواصل والعنوان -->
-        <div class="section-header">ثانياً: معلومات التواصل والعنوان الرسمي</div>
-        <div class="form-grid">
-            <div class="form-group">
-                <label for="email">البريد الإلكتروني الرسمي *</label>
-                <input type="email" id="email" required placeholder="investor@domain.com">
-            </div>
-            <div class="form-group">
-                <label for="phone">أرقام التواصل (هاتف ثابت / جوال مع النداء الدولي) *</label>
-                <input type="tel" id="phone" required placeholder="+963 ...">
-            </div>
-        </div>
-        <div class="form-grid full-width">
-            <div class="form-group">
-                <label for="address">العنوان الإداري المعتمد للمراسلات *</label>
-                <input type="text" id="address" required placeholder="المحافظة، المدينة، الشارع، رقم المبنى">
-            </div>
-        </div>
-
-        <!-- ثالثاً: خامات الثروة المعدنية في سوريا -->
-        <div class="section-header">ثالثاً: الخام المعدني المطلوب استثماره (خامات الثروة المعدنية في سوريا)</div>
-        <div class="form-grid full-width">
-            <div class="form-group">
-                <label>حدد الخام أو الخامات المعدنية والصخور الصناعية المستهدفة بالاستثمار *</label>
-                <div class="ores-grid">
-                    <label class="ore-item"><input type="checkbox" name="ore" value="phosphate"> الفوسفات</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="basalt"> البازلت</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="marble"> الرخام وأحجار الزينة</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="silica"> الرمال السيلسية</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="gypsum"> الجبس</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="clay"> الغضار</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="salt"> الملح الصخري والحثي</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="kaolin"> الكاولين</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="zeolite"> الزيوليت</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="siliceous"> السيلس</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="limestone"> الحجر الكلسي الصناعي</label>
-
-                    <label class="ore-item"><input type="checkbox" name="ore" value="tuff"> الطف البركاني</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="iron"> خامات الحديد</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="asphalt"> الصخور الإسفلتية</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="dolomite"> الدولومايت</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="diatomite"> الدياتومات</label>
-                    <label class="ore-item"><input type="checkbox" name="ore" value="other"> خامات أخرى (تحدد أسفله)</label>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>صفة المستثمر *</label>
+                    <div class="radio-box">
+                        <label class="radio-label"><input type="radio" name="investorType" value="local" checked> مستثمر داخلي (محلي)</label>
+                        <label class="radio-label"><input type="radio" name="investorType" value="foreign"> مستثمر خارجي (أجنبي / مغترب)</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">الجنسية / بلد التسجيل *</label>
+                    <input type="text" id="nationality" required placeholder="الدولة أو الجنسية">
                 </div>
             </div>
-        </div>
 
-        <!-- رابعاً: تفاصيل ورؤية المشروع -->
-        <div class="section-header">رابعاً: تفاصيل ومقومات المشروع الاستثماري</div>
-        <div class="form-grid">
-            <div class="form-group">
-                <label for="location">الموقع الجغرافي / المحافظة المقترحة *</label>
-                <input type="text" id="location" required placeholder="مثال: خنيفيس، البشري، السخنة، ريف دمشق...">
+            <div class="section-title">ثانياً: معلومات التواصل والعنوان</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني الرسمي *</label>
+                    <input type="email" id="email" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">أرقام التواصل (هاتف / جوال) *</label>
+                    <input type="tel" id="phone" required placeholder="+963 ...">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="area">المساحة التقديرية المطلوبة *</label>
-                <input type="text" id="area" required placeholder="المساحة بالهكتار أو كم²">
+            <div class="form-grid full">
+                <div class="form-group">
+                    <label for="address">العنوان الإداري المعتمد *</label>
+                    <input type="text" id="address" required placeholder="المحافظة، المدينة، الشارع، الرمز البريدي">
+                </div>
             </div>
-        </div>
 
-        <div class="form-grid full-width">
-            <div class="form-group">
-                <label for="projectDesc">نبذة مختصرة عن طبيعة المشروع وتكنولوجيا الاستخراج والتصنيع المقترحة *</label>
-                <textarea id="projectDesc" rows="4" required placeholder="اكتب وصفاً موجزاً لنوع الاستثمار (استخراج خام، تصنيع وتحويل، خطوط إنتاج، المعايير البيئية والتقنية)..."></textarea>
+            <div class="section-title">ثالثاً: الخامات المعدنية المطلوبة (حسب الخامات المعتمدة)</div>
+            <div class="form-grid full">
+                <div class="form-group">
+                    <label>حدد الخام أو الخامات المعدنية المستهدفة بالاستثمار *</label>
+                    <div class="ores-container">
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="phosphate"> الفوسفات</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="silica"> السيليكا</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="carbonates"> الكربونات</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="iron"> الحديد</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="oil_shale"> السجيل الزيتي</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="asphalt"> الأسفلت</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="zeolite"> الزيوليت</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="basalt"> البازلت</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="marble"> الرخام</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="salt"> الملح</label>
+                        <label class="ore-checkbox"><input type="checkbox" name="ores" value="other"> خامات أخرى</label>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- أزرار الإرسال والطباعة -->
-        <div class="actions-area">
-            <button type="submit" class="btn-submit">تقديم الطلب رسمياً</button>
-            <button type="button" class="btn-print" onclick="window.print()">طباعة الاستمارة (PDF)</button>
-        </div>
-    </form>
+            <div class="section-title">رابعاً: تفاصيل المشروع الاستثماري</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="location">الموقع الجغرافي / المحافظة المقترحة *</label>
+                    <input type="text" id="location" required placeholder="حدد الموقع أو المحافظة">
+                </div>
+                <div class="form-group">
+                    <label for="area">المساحة التقديرية المطلوبة *</label>
+                    <input type="text" id="area" required placeholder="بالميل المربع أو الهكتار أو كم²">
+                </div>
+            </div>
+
+            <div class="form-grid full">
+                <div class="form-group">
+                    <label for="projectDesc">نبذة مختصرة عن طبيعة المشروع (تحدد فيها تفاصيل الخامات الأخرى إن وجدت) *</label>
+                    <textarea id="projectDesc" rows="4" required placeholder="اكتب وصفاً موجزاً لطبيعة المشروع الاستثماري، وتقنيات الاستخراج والتصنيع المقترحة..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">إرسال الطلب رسمياً</button>
+                <button type="button" class="btn-print" onclick="window.print()">طباعة الاستمارة (PDF)</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 </body>
