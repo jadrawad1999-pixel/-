@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة طلب استثمار الخامات المعدنية | المؤسسة العامة للجيولوجيا والثروة المعدنية</title>
+    <style>
+        :root {
+            --primary-color: #1b365d; /* أزرق داكن حكومي */
+            --secondary-color: #2c5282;
+            --accent-color: #c5a059; /* ذهبي رسمي */
+            --bg-color: #f8fafc;
+            --border-color: #cbd5e1;
+        }
+        body {
+            font-family: 'Traditional Arabic', 'Tahoma', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: #1e293b;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px double var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .header h3 {
+            margin: 5px 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        .header h1 {
+            margin: 10px 0;
+            color: var(--primary-color);
+            font-size: 1.6rem;
+        }
+        .form-title {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(27, 54, 93, 0.1);
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 8px 0;
+        }
+        .radio-group label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+        .actions {
+            margin-top: 40px;
+            text-align: center;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        .btn-print {
+            background-color: var(--accent-color);
+            color: #1e293b;
+        }
+        .btn-print:hover {
+            background-color: #b08d4a;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+            .actions { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h3>الجمهورية العربية السورية — وزارة الطاقة</h3>
+        <h1>المؤسسة العامة للجيولوجيا والثروة المعدنية</h1>
+        <h3>دائرة الدراسات والمشاريع التعدينية</h3>
+    </div>
+
+    <div class="form-title">استمارة طلب استثمار الخامات المعدنية (رسمية أولية)</div>
+
+    <form id="miningForm">
+        <div class="section-title">أولاً: بيانات المستثمر الأساسية</div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fullName">الاسم الكامل للمستثمر / الممثل القانوني *</label>
+                <input type="text" id="fullName" required placeholder="أدخل الاسم الثلاثي">
+            </div>
+            <div class="form-group">
+                <label for="companyName">اسم الشركة / المؤسسة المستثمرة *</label>
+                <input type="text" id="companyName" required placeholder="اسم الشركة المسجلة">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>صفة المستثمر *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="investorType" value="local" checked> مستثمر داخلي (محلي)</label>
+                    <label><input type="radio" name="investorType" value="foreign"> مستثمر خارجي (أجنبي / مغترب)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nationality">الجنسية / بلد التسجيل *</label>
+                <input type="text" id="nationality" required placeholder="الدولة أو الجنسية">
+            </div>
+        </div>
+
+        <div class="section-title">ثانياً: بيانات التواصل والعنوان</div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني الرسمي *</label>
+                <input type="email" id="email" required placeholder="name@company.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">أرقام التواصل (هاتف / جوال) *</label>
+                <input type="tel" id="phone" required placeholder="+963 ...">
+            </div>
+        </div>
+        <div class="form-row full">
+            <div class="form-group">
+                <label for="address">العنوان الإداري الكامل *</label>
+                <input type="text" id="address" required placeholder="المدينة، الشارع، المبنى، الرمز البريدي">
+            </div>
+        </div>
+
+        <div class="section-title">ثالثاً: تفاصيل المشروع والخام المستهدف</div>
+        <div class="form-row full">
+            <div class="form-group">
+                <label>الخام المعدني المطلوب استثماره *</label>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item"><input type="checkbox" name="ore" value="phosphate"> الفوسفات</label>
+                    <label class="checkbox-item"><input type="checkbox" name="ore" value="gypsum"> الجبس</label>
+                    <label class="checkbox-item"><input type="checkbox" name="ore" value="marble"> أحجار الزينة والرخام</label>
+                    <label class="checkbox-item"><input type="checkbox" name="ore" value="silica"> الرمال السيلسية</label>
+                    <label class="checkbox-item"><input type="checkbox" name="ore" value="basalt"> البازلت</label>
+                    <label class="checkbox-item"><input type="checkbox" name="ore" value="clay"> الغضار والصلصال</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="location">الموقع الجغرافي / المحافظة المقترحة *</label>
+                <input type="text" id="location" required placeholder="حدد المحافظة أو المنطقة التنقيبية">
+            </div>
+            <div class="form-group">
+                <label for="area">المساحة التقديرية المطلوبة *</label>
+                <input type="text" id="area" required placeholder="بالميل المربع أو الهكتار أو كم²">
+            </div>
+        </div>
+
+        <div class="form-row full">
+            <div class="form-group">
+                <label for="projectDesc">نبذة مختصرة عن طبيعة المشروع وتكنولوجيا الاستخراج والتصنيع *</label>
+                <textarea id="projectDesc" rows="4" required placeholder="اكتب وصفاً موجزاً لطبيعة النشاط الاستثماري، مراحل التنقيب، والتقنيات البيئية والصناعية المستخدمة..."></textarea>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button type="submit" class="btn">إرسال الطلب رسمياً</button>
+            <button type="button" class="btn btn-print" onclick="window.print()">طباعة الاستمارة (PDF)</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
